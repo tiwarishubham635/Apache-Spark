@@ -3,7 +3,7 @@
 #### Contributor(s): Shubham, Yash Sethia, Ritesh Kumar 
 
 ----------
-### Aboutnd
+### About
 
 *Apache Spark*, written in Scala, is a general-purpose distributed data processing engine. Or in other words: load big data, do computations on it in a distributed way, and then store it. <br/> <br/>
 Apache Spark contains libraries for data analysis, machine learning, graph analysis, and streaming live data. Spark is generally faster than *Hadoop*. 
