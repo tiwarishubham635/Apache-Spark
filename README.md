@@ -1,6 +1,6 @@
-# Apache Spark: Distributed Database
+# Apache Spark: Distributed Databases
+#### Contributor(s): Yash Sethia, Ritesh Kumar, Shubham
 ![Snapshot](https://www.edureka.co/blog/wp-content/uploads/2018/09/Picture5-2.png)
-#### Contributor(s): Shubham, Yash Sethia, Ritesh Kumar 
 
 ----------
 ### About
@@ -15,11 +15,17 @@ This way, Spark is able to find the best path looking at overall transformations
 which will eventually will be filtered out in the final result). 
 <br/><br/>
 This makes Spark one of the most popular tools for big data analytics currently.
+PySpark is an interface for Apache Spark in Python. It not only allows you to write Spark applications using Python APIs, but also provides the PySpark shell for interactively analyzing your data in a distributed environment.<br/><br/>
 
-### Spark in Local Mode:
-Spark runs on JVM. It exposes a Python, R, Scala and SQL interface. It runs on a single server. Thus it provides benefit from parallelization across all the cores in your server, but not across several servers. <br/><br/>
-For Python, Spark provides Python API via PySpark, which is available in PyPI and so can be installed via pip. 
-It can be imported or directly invoked as pyspark to get an interactive shell.
+In this Notebook, we have the data of an Ecommerce website with the following fields:
+- Email ID of the user
+- Address of the user
+- Average Session Length of the user
+- Time spent by the user on the app
+- Time spent by the user on the website
+- Length of the membership of the user
+- Yearly amount spent by the user
+The database is however distributed. Thus we use Pyspark API of Apache Spark to handle this data to bring out meaningful inferences and try to predict the Amount spent by users using Linear Regression.
 
 ### To run this in your system:
 - Clone this repository
