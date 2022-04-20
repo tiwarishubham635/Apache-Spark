@@ -1,4 +1,4 @@
-# Apache Spark: Distributed Database
+# Apache Spark: Distributed Databases
 ![Snapshot](https://www.edureka.co/blog/wp-content/uploads/2018/09/Picture5-2.png)
 #### Contributor(s): Shubham, Yash Sethia, Ritesh Kumar 
 
