@@ -27,11 +27,6 @@ In this Notebook, we have the data of an Ecommerce website with the following fi
 - Yearly amount spent by the user
 The database is however distributed. Thus we use Pyspark API of Apache Spark to handle this data to bring out meaningful inferences and try to predict the Amount spent by users using Linear Regression.
 
-### Spark in Local Mode:
-Spark runs on JVM. It exposes a Python, R, Scala and SQL interface. It runs on a single server. Thus it provides benefit from parallelization across all the cores in your server, but not across several servers. <br/><br/>
-For Python, Spark provides Python API via PySpark, which is available in PyPI and so can be installed via pip. 
-It can be imported or directly invoked as pyspark to get an interactive shell.
-
 ### To run this in your system:
 - Clone this repository
 - In a terminal, navigate to the folder containing this repository and run the following command:
