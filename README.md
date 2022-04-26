@@ -1,4 +1,4 @@
-# Apache Spark: Distributed Databases
+# Ecommerce Sales Prediction using Apache Spark
 #### Contributor(s): Yash Sethia, Ritesh Kumar, Shubham
 ![Snapshot](https://www.edureka.co/blog/wp-content/uploads/2018/09/Picture5-2.png)
 
