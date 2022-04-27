@@ -14579,7 +14579,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Apache-Spark---Distributed-Databases">Ecommerce Sales Prediction using Apache Spark<a class="anchor-link" href="#Apache-Spark---Distributed-Databases">&#182;</a></h1><h4 id="Contributor(s):-Yash-Sethia,-Ritesh-Kumar,-Shubham">Contributor(s): Yash Sethia, Ritesh Kumar, Shubham<a class="anchor-link" href="#Contributor(s):-Yash-Sethia,-Ritesh-Kumar,-Shubham">&#182;</a></h4><h2><img src="https://www.edureka.co/blog/wp-content/uploads/2018/09/Picture5-2.png" alt="Snapshot"></h2>
+<h1 id="Ecommerce-Sales-Prediction-using-Apache-Spark">Ecommerce Sales Prediction using Apache Spark<a class="anchor-link" href="#Ecommerce-Sales-Prediction-using-Apache-Spark">&#182;</a></h1><h4 id="Contributor(s):-Yash-Sethia,-Ritesh-Kumar,-Shubham">Contributor(s): Yash Sethia, Ritesh Kumar, Shubham<a class="anchor-link" href="#Contributor(s):-Yash-Sethia,-Ritesh-Kumar,-Shubham">&#182;</a></h4><h2><img src="https://www.edureka.co/blog/wp-content/uploads/2018/09/Picture5-2.png" alt="Snapshot"></h2>
 <h3 id="About-Apache-Spark">About Apache Spark<a class="anchor-link" href="#About-Apache-Spark">&#182;</a></h3><p><em>Apache Spark</em>, written in Scala, is a general-purpose distributed data processing engine. Or in other words: load big data, do computations on it in a distributed way, and then store it. <br/> <br/>
 Apache Spark contains libraries for data analysis, machine learning, graph analysis, and streaming live data. Spark is generally faster than <em>Hadoop</em>. 
 This is because Hadoop writes intermediate results to disk (that is, lots of I/O operations) whereas Spark tries to keep intermediate results in memory 
@@ -14591,7 +14591,8 @@ which will eventually will be filtered out in the final result).
 <br/><br/>
 This makes Spark one of the most popular tools for big data analytics currently.</p>
 <p>PySpark is an interface for Apache Spark in Python. It not only allows you to write Spark applications using Python APIs, but also provides the PySpark shell for interactively analyzing your data in a distributed environment.</p>
-<p>In this Notebook, we have the data of an Ecommerce website with the following fields:</p>
+<p>In this Notebook, we have the data of an Ecommerce website with the following fields:
+Definitions:</p>
 <ul>
 <li>Email ID of the user</li>
 <li>Address of the user</li>
@@ -14652,7 +14653,12 @@ This makes Spark one of the most popular tools for big data analytics currently.
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;./Ecommerce_Customers.csv&quot;</span><span class="p">,</span> <span class="n">inferSchema</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">path</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./Ecommerce_Customers.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;./Ecommerce_Customers1.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;./Ecommerce_Customers2.csv&#39;</span>
+       <span class="p">]</span>
+ 
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">options</span><span class="p">(</span><span class="n">inferSchema</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14751,11 +14757,11 @@ This makes Spark one of the most popular tools for big data analytics currently.
 <pre>+--------------------+--------------------+------------------+-----------+---------------+--------------------+-------------------+
 |               Email|             Address|Avg Session Length|Time on App|Time on Website|Length of Membership|Yearly Amount Spent|
 +--------------------+--------------------+------------------+-----------+---------------+--------------------+-------------------+
-|mstephenson@ferna...|835 Frank TunnelW...|       34.49726773|12.65565115|    39.57766802|         4.082620633|         587.951054|
-|   hduke@hotmail.com|4547 Archer Commo...|       31.92627203|11.10946073|    37.26895887|         2.664034182|        392.2049334|
-|    pallen@yahoo.com|24645 Valerie Uni...|       33.00091476|11.33027806|    37.11059744|         4.104543202|        487.5475049|
-|riverarebecca@gma...|1414 David Throug...|       34.30555663|13.71751367|    36.72128268|         3.120178783|         581.852344|
-|mstephens@davidso...|14023 Rodriguez P...|       33.33067252|12.79518855|     37.5366533|         4.446308318|         599.406092|
+|    ryan36@gmail.com|5379 Rhonda Prair...|       32.22729914|13.72862718|    37.99702801|         4.802630631|        613.5993234|
+|    chris67@ryan.biz|716 Bush Greens A...|       32.78977262|11.67006592|    37.40874848|         3.414688423|        483.1597208|
+|   katie25@gmail.com|6861 Lopez Fork A...|       32.77260993|13.27631301|    36.60077705|         3.462298847|        540.2634004|
+|      kyang@diaz.org|223 Love Trail Su...|       34.37425805|15.12699429|    37.15762409|         5.377593584|        765.5184619|
+|tadams@contreras....|049 Matthew Terra...|       33.07871721|12.69578975|    35.35844431|         4.001786346|        553.6015347|
 +--------------------+--------------------+------------------+-----------+---------------+--------------------+-------------------+
 only showing top 5 rows
 
@@ -14869,53 +14875,53 @@ only showing top 5 rows
   <tbody>
     <tr>
       <th>0</th>
-      <td>mstephenson@fernandez.com</td>
-      <td>835 Frank TunnelWrightmouth, MI 82180-9605</td>
-      <td>34.497268</td>
-      <td>12.655651</td>
-      <td>39.577668</td>
-      <td>4.082621</td>
-      <td>587.951054</td>
+      <td>ryan36@gmail.com</td>
+      <td>5379 Rhonda Prairie Apt. 696Brownland, WA 87027</td>
+      <td>32.227299</td>
+      <td>13.728627</td>
+      <td>37.997028</td>
+      <td>4.802631</td>
+      <td>613.599323</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>hduke@hotmail.com</td>
-      <td>4547 Archer CommonDiazchester, CA 06566-8576</td>
-      <td>31.926272</td>
-      <td>11.109461</td>
-      <td>37.268959</td>
-      <td>2.664034</td>
-      <td>392.204933</td>
+      <td>chris67@ryan.biz</td>
+      <td>716 Bush Greens Apt. 098Trevorton, MA 17817-8000</td>
+      <td>32.789773</td>
+      <td>11.670066</td>
+      <td>37.408748</td>
+      <td>3.414688</td>
+      <td>483.159721</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>pallen@yahoo.com</td>
-      <td>24645 Valerie Unions Suite 582Cobbborough, DC ...</td>
-      <td>33.000915</td>
-      <td>11.330278</td>
-      <td>37.110597</td>
-      <td>4.104543</td>
-      <td>487.547505</td>
+      <td>katie25@gmail.com</td>
+      <td>6861 Lopez Fork Apt. 114South Jamiechester, DE...</td>
+      <td>32.772610</td>
+      <td>13.276313</td>
+      <td>36.600777</td>
+      <td>3.462299</td>
+      <td>540.263400</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>riverarebecca@gmail.com</td>
-      <td>1414 David ThroughwayPort Jason, OH 22070-1220</td>
-      <td>34.305557</td>
-      <td>13.717514</td>
-      <td>36.721283</td>
-      <td>3.120179</td>
-      <td>581.852344</td>
+      <td>kyang@diaz.org</td>
+      <td>223 Love Trail Suite 831Port Jeffrey, IN 46849</td>
+      <td>34.374258</td>
+      <td>15.126994</td>
+      <td>37.157624</td>
+      <td>5.377594</td>
+      <td>765.518462</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>mstephens@davidson-herman.com</td>
-      <td>14023 Rodriguez PassagePort Jacobville, PR 372...</td>
-      <td>33.330673</td>
-      <td>12.795189</td>
-      <td>37.536653</td>
-      <td>4.446308</td>
-      <td>599.406092</td>
+      <td>tadams@contreras.info</td>
+      <td>049 Matthew TerraceLake Matthew, MS 20210</td>
+      <td>33.078717</td>
+      <td>12.695790</td>
+      <td>35.358444</td>
+      <td>4.001786</td>
+      <td>553.601535</td>
     </tr>
   </tbody>
 </table>
@@ -14985,53 +14991,53 @@ only showing top 5 rows
   <tbody>
     <tr>
       <th>0</th>
-      <td>mstephenson@fernandez.com</td>
-      <td>835 Frank TunnelWrightmouth, MI 82180-9605</td>
+      <td>ryan36@gmail.com</td>
+      <td>5379 Rhonda Prairie Apt. 696Brownland, WA 87027</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>hduke@hotmail.com</td>
-      <td>4547 Archer CommonDiazchester, CA 06566-8576</td>
+      <td>chris67@ryan.biz</td>
+      <td>716 Bush Greens Apt. 098Trevorton, MA 17817-8000</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>pallen@yahoo.com</td>
-      <td>24645 Valerie Unions Suite 582Cobbborough, DC ...</td>
+      <td>katie25@gmail.com</td>
+      <td>6861 Lopez Fork Apt. 114South Jamiechester, DE...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>riverarebecca@gmail.com</td>
-      <td>1414 David ThroughwayPort Jason, OH 22070-1220</td>
+      <td>kyang@diaz.org</td>
+      <td>223 Love Trail Suite 831Port Jeffrey, IN 46849</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>mstephens@davidson-herman.com</td>
-      <td>14023 Rodriguez PassagePort Jacobville, PR 372...</td>
+      <td>tadams@contreras.info</td>
+      <td>049 Matthew TerraceLake Matthew, MS 20210</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>alvareznancy@lucas.biz</td>
-      <td>645 Martha Park Apt. 611Jeffreychester, MN 672...</td>
+      <td>craigcastro@burgess.com</td>
+      <td>65407 Warner Forges Suite 071New Lori, AZ 3013...</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>katherine20@yahoo.com</td>
-      <td>68388 Reyes Lights Suite 692Josephbury, WV 922...</td>
+      <td>ellen24@anthony.com</td>
+      <td>PSC 3408, Box 3353APO AE 05113-1257</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>awatkins@yahoo.com</td>
-      <td>Unit 6538 Box 8980DPO AP 09026-4941</td>
+      <td>davisrobert@hicks-smith.com</td>
+      <td>95967 Pitts BurgsWest Sarah, MH 27817-5147</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>vchurch@walter-martinez.com</td>
-      <td>860 Lee KeyWest Debra, SD 97450-0495</td>
+      <td>walkerlaura@peterson-yates.com</td>
+      <td>89154 Jones Stream Suite 311East Katie, NC 727...</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>bonnie69@lin.biz</td>
-      <td>PSC 2734, Box 5255APO AA 98456-7482</td>
+      <td>marc54@hotmail.com</td>
+      <td>Unit 6174 Box 1949DPO AP 27478</td>
     </tr>
   </tbody>
 </table>
@@ -15378,7 +15384,7 @@ only showing top 5 rows
 <pre>+-------------------------+
 |avg(Length of Membership)|
 +-------------------------+
-|       3.5334615559300007|
+|        3.533461555930001|
 +-------------------------+
 
 </pre>
@@ -15422,7 +15428,7 @@ only showing top 5 rows
 <pre>+------------------------+
 |avg(Yearly Amount Spent)|
 +------------------------+
-|       499.3140382608002|
+|       499.3140382607999|
 +------------------------+
 
 </pre>
@@ -15509,22 +15515,22 @@ only showing top 5 rows
       <td>mean</td>
       <td>None</td>
       <td>None</td>
-      <td>33.05319351824</td>
-      <td>12.052487936928012</td>
-      <td>37.060445421080004</td>
-      <td>3.5334615559300007</td>
-      <td>499.3140382608002</td>
+      <td>33.053193518240015</td>
+      <td>12.052487936927994</td>
+      <td>37.06044542108</td>
+      <td>3.533461555930001</td>
+      <td>499.3140382607999</td>
     </tr>
     <tr>
       <th>2</th>
       <td>stddev</td>
       <td>None</td>
       <td>None</td>
-      <td>0.9925631111602911</td>
+      <td>0.9925631111602917</td>
       <td>0.9942156084624618</td>
-      <td>1.0104889068105993</td>
-      <td>0.9992775024367542</td>
-      <td>79.31478155115914</td>
+      <td>1.0104889068105996</td>
+      <td>0.9992775024367541</td>
+      <td>79.31478155115916</td>
     </tr>
     <tr>
       <th>3</th>
@@ -15683,58 +15689,58 @@ only showing top 5 rows
   <tbody>
     <tr>
       <th>0</th>
-      <td>mstephenson@fernandez.com</td>
-      <td>835 Frank TunnelWrightmouth, MI 82180-9605</td>
-      <td>34.497268</td>
-      <td>12.655651</td>
-      <td>39.577668</td>
-      <td>4.082621</td>
-      <td>587.951054</td>
-      <td>[34.49726773, 12.65565115, 39.57766802, 4.0826...</td>
+      <td>ryan36@gmail.com</td>
+      <td>5379 Rhonda Prairie Apt. 696Brownland, WA 87027</td>
+      <td>32.227299</td>
+      <td>13.728627</td>
+      <td>37.997028</td>
+      <td>4.802631</td>
+      <td>613.599323</td>
+      <td>[32.22729914, 13.72862718, 37.99702801, 4.8026...</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>hduke@hotmail.com</td>
-      <td>4547 Archer CommonDiazchester, CA 06566-8576</td>
-      <td>31.926272</td>
-      <td>11.109461</td>
-      <td>37.268959</td>
-      <td>2.664034</td>
-      <td>392.204933</td>
-      <td>[31.92627203, 11.10946073, 37.26895887, 2.6640...</td>
+      <td>chris67@ryan.biz</td>
+      <td>716 Bush Greens Apt. 098Trevorton, MA 17817-8000</td>
+      <td>32.789773</td>
+      <td>11.670066</td>
+      <td>37.408748</td>
+      <td>3.414688</td>
+      <td>483.159721</td>
+      <td>[32.78977262, 11.67006592, 37.40874848, 3.4146...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>pallen@yahoo.com</td>
-      <td>24645 Valerie Unions Suite 582Cobbborough, DC ...</td>
-      <td>33.000915</td>
-      <td>11.330278</td>
-      <td>37.110597</td>
-      <td>4.104543</td>
-      <td>487.547505</td>
-      <td>[33.00091476, 11.33027806, 37.11059744, 4.1045...</td>
+      <td>katie25@gmail.com</td>
+      <td>6861 Lopez Fork Apt. 114South Jamiechester, DE...</td>
+      <td>32.772610</td>
+      <td>13.276313</td>
+      <td>36.600777</td>
+      <td>3.462299</td>
+      <td>540.263400</td>
+      <td>[32.77260993, 13.27631301, 36.60077705, 3.4622...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>riverarebecca@gmail.com</td>
-      <td>1414 David ThroughwayPort Jason, OH 22070-1220</td>
-      <td>34.305557</td>
-      <td>13.717514</td>
-      <td>36.721283</td>
-      <td>3.120179</td>
-      <td>581.852344</td>
-      <td>[34.30555663, 13.71751367, 36.72128268, 3.1201...</td>
+      <td>kyang@diaz.org</td>
+      <td>223 Love Trail Suite 831Port Jeffrey, IN 46849</td>
+      <td>34.374258</td>
+      <td>15.126994</td>
+      <td>37.157624</td>
+      <td>5.377594</td>
+      <td>765.518462</td>
+      <td>[34.37425805, 15.12699429, 37.15762409, 5.3775...</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>mstephens@davidson-herman.com</td>
-      <td>14023 Rodriguez PassagePort Jacobville, PR 372...</td>
-      <td>33.330673</td>
-      <td>12.795189</td>
-      <td>37.536653</td>
-      <td>4.446308</td>
-      <td>599.406092</td>
-      <td>[33.33067252, 12.79518855, 37.5366533, 4.44630...</td>
+      <td>tadams@contreras.info</td>
+      <td>049 Matthew TerraceLake Matthew, MS 20210</td>
+      <td>33.078717</td>
+      <td>12.695790</td>
+      <td>35.358444</td>
+      <td>4.001786</td>
+      <td>553.601535</td>
+      <td>[33.07871721, 12.69578975, 35.35844431, 4.0017...</td>
     </tr>
     <tr>
       <th>...</th>
@@ -15847,26 +15853,26 @@ only showing top 5 rows
 <pre>+--------------------+
 |Independent Features|
 +--------------------+
-|[34.49726773,12.6...|
-|[31.92627203,11.1...|
-|[33.00091476,11.3...|
-|[34.30555663,13.7...|
-|[33.33067252,12.7...|
-|[33.87103788,12.0...|
-|[32.0215955,11.36...|
-|[32.73914294,12.3...|
-|[33.9877729,13.38...|
-|[31.93654862,11.8...|
-|[33.99257277,13.3...|
-|[33.87936082,11.5...|
-|[29.53242897,10.9...|
-|[33.19033404,12.9...|
-|[32.38797585,13.1...|
-|[30.73772037,12.6...|
-|[32.1253869,11.73...|
-|[32.33889932,12.0...|
-|[32.18781205,14.7...|
-|[32.61785606,13.9...|
+|[32.22729914,13.7...|
+|[32.78977262,11.6...|
+|[32.77260993,13.2...|
+|[34.37425805,15.1...|
+|[33.07871721,12.6...|
+|[32.8052204,11.83...|
+|[32.43075793,11.3...|
+|[32.17909997,11.1...|
+|[33.15417579,11.8...|
+|[34.33589584,12.2...|
+|[32.38625186,10.6...|
+|[32.80869759,12.8...|
+|[33.87974497,13.5...|
+|[32.04983939,12.2...|
+|[33.55520742,11.5...|
+|[33.14207933,11.4...|
+|[32.59718266,10.8...|
+|[33.16713688,11.9...|
+|[31.51473786,12.5...|
+|[34.59402115,10.9...|
 +--------------------+
 only showing top 20 rows
 
@@ -15983,28 +15989,28 @@ only showing top 20 rows
   <tbody>
     <tr>
       <th>0</th>
-      <td>[34.49726773, 12.65565115, 39.57766802, 4.0826...</td>
-      <td>587.951054</td>
+      <td>[32.22729914, 13.72862718, 37.99702801, 4.8026...</td>
+      <td>613.599323</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[31.92627203, 11.10946073, 37.26895887, 2.6640...</td>
-      <td>392.204933</td>
+      <td>[32.78977262, 11.67006592, 37.40874848, 3.4146...</td>
+      <td>483.159721</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[33.00091476, 11.33027806, 37.11059744, 4.1045...</td>
-      <td>487.547505</td>
+      <td>[32.77260993, 13.27631301, 36.60077705, 3.4622...</td>
+      <td>540.263400</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>[34.30555663, 13.71751367, 36.72128268, 3.1201...</td>
-      <td>581.852344</td>
+      <td>[34.37425805, 15.12699429, 37.15762409, 5.3775...</td>
+      <td>765.518462</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>[33.33067252, 12.79518855, 37.5366533, 4.44630...</td>
-      <td>599.406092</td>
+      <td>[33.07871721, 12.69578975, 35.35844431, 4.0017...</td>
+      <td>553.601535</td>
     </tr>
     <tr>
       <th>...</th>
@@ -16114,7 +16120,7 @@ We can show these values as follows.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>DenseVector([25.6297, 39.0994, 0.1082, 61.6509])</pre>
+<pre>DenseVector([25.6933, 38.582, 0.2568, 61.3066])</pre>
 </div>
 
 </div>
@@ -16155,7 +16161,7 @@ We can show these values as follows.</p>
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>-1041.0597770493746</pre>
+<pre>-1040.8083731912807</pre>
 </div>
 
 </div>
@@ -16211,46 +16217,46 @@ We can show these values as follows.</p>
 <pre>+--------------------+-------------------+------------------+
 |Independent Features|Yearly Amount Spent|        prediction|
 +--------------------+-------------------+------------------+
-|[30.4925367,11.56...|        282.4712457|287.79331147202674|
-|[30.73772037,12.6...|        461.7807422| 451.7540769098059|
-|[31.04722214,11.1...|        392.4973992|387.18139055150914|
-|[31.06621816,11.7...|        448.9332932|462.02150554994796|
-|[31.12397435,12.3...|        486.9470538|509.18711779560954|
-|[31.26064687,13.2...|        421.3266313| 422.6409228707412|
-|[31.3123496,11.68...|         463.591418| 444.1187576471332|
-|[31.5261979,12.04...|        409.0945262| 417.6415812288344|
-|[31.6005122,12.22...|        479.1728515| 461.2531087524005|
-|[31.62536013,13.1...|        376.3369008| 381.2633571284575|
-|[31.7207699,11.75...|        538.7749335| 545.3462587943034|
-|[31.81248256,10.8...|         392.810345|396.61495187708124|
-|[31.85125313,12.4...|        472.9922467|465.21676679409984|
-|[31.8530748,12.14...|        459.2851235| 461.6546953504046|
-|[31.86274111,14.0...|        556.2981412| 558.9928093445296|
-|[31.90485713,12.2...|        473.9498574| 491.2612259371149|
-|[31.91207593,11.7...|        387.5347163|389.52157247660216|
-|[31.94801742,13.0...|        461.9208769|456.74417785199694|
-|[31.96732095,11.4...|        445.7498412|449.20389500208285|
-|[31.97648006,10.7...|         330.594446| 324.9280377209602|
-|[32.00475302,11.3...|        463.7459811| 463.2774917042898|
-|[32.01230077,12.1...|        492.9450531| 489.1503756604261|
-|[32.0215955,11.36...|        521.5721748| 516.8651266858194|
-|[32.07054622,11.7...|        532.7517876| 531.7045702017926|
-|[32.07759004,10.3...|        401.0331352|401.64230162852414|
-|[32.21552742,12.2...|         438.417742|445.72039628036873|
-|[32.28866691,12.0...|        507.3900618| 501.8553628344059|
-|[32.29464155,12.4...|        586.1558702| 590.6819579242353|
-|[32.3025531,11.97...|        478.6009159| 477.1628050440718|
-|[32.31985797,12.4...|        482.8309859|475.38436107102575|
-|[32.33889932,12.0...|        407.7045475|410.88228458758954|
-|[32.35147815,13.1...|        532.9352188| 528.8524274240435|
-|[32.38625186,10.6...|        418.1500811| 420.1808081755996|
-|[32.40237102,10.8...|        338.3198626| 336.7233156098903|
-|[32.40429505,11.6...|        447.3690272| 430.3709215658764|
-|[32.40855896,10.9...|        441.8966315|439.21600759193484|
-|[32.42569728,11.4...|        420.7376732| 401.2002840055318|
-|[32.43075793,11.3...|        408.6201878|407.63359632790457|
-|[32.43083858,13.8...|        557.6082621| 569.8758140055572|
-|[32.45517629,12.7...|        542.7115581| 548.2883598339236|
+|[30.83643267,13.1...|        467.5019004| 472.2180354539273|
+|[31.04722214,11.1...|        392.4973992| 388.2973841854264|
+|[31.12397435,12.3...|        486.9470538|  508.826799247724|
+|[31.12809005,13.2...|        557.2526867| 564.5117028397945|
+|[31.42522688,13.2...|        530.7667187| 534.7921525532133|
+|[31.44597248,12.8...|        484.8769649| 482.1866211449312|
+|[31.65480968,13.0...|        475.2634237|468.87996503054774|
+|[31.73663569,10.7...|        496.9334463|494.93608937420777|
+|[31.76561882,12.4...|        496.5540816|501.25400841604596|
+|[31.80930032,11.6...|        536.7718994|  548.136300180279|
+|[31.81248256,10.8...|         392.810345|397.36457109201115|
+|[31.81861657,11.2...|        446.4186734|449.27719256392515|
+|[31.82934646,11.2...|         385.152338|384.85552230709163|
+|[31.86274111,14.0...|        556.2981412| 558.2199932060018|
+|[31.90962683,11.3...|        563.4460357| 551.9863593532875|
+|[31.94801742,13.0...|        461.9208769| 456.9324568805712|
+|[31.95490386,10.9...|        439.9978799| 432.1756531389883|
+|[32.04780098,12.7...|        513.4505712| 508.3159556923656|
+|[32.11640012,12.3...|        463.4849954| 461.0075452009103|
+|[32.1223648,11.43...|        528.9336186| 532.5385170644304|
+|[32.20079864,12.2...|        478.8853913|473.34420402376895|
+|[32.21552742,12.2...|         438.417742| 446.1880769850327|
+|[32.23014912,11.0...|        517.1651356| 514.3074444482065|
+|[32.2559012,10.48...|        479.7319376| 478.6431875897463|
+|[32.27844335,12.5...|         488.270298| 497.7841588865433|
+|[32.29464155,12.4...|        586.1558702| 590.3446099127702|
+|[32.37798966,11.9...|        408.2169018| 436.0131861997502|
+|[32.38103459,12.4...|        532.7248055| 546.2257296355576|
+|[32.38473266,10.8...|        465.8893127| 464.5551313621022|
+|[32.39742194,12.0...|        483.7965221|481.38332934990353|
+|[32.40173183,12.0...|        506.5473071|505.42590730788766|
+|[32.4071483,13.80...|        662.9610878|  643.201039873345|
+|[32.43083858,13.8...|        557.6082621| 569.4081216396382|
+|[32.43977025,12.4...|        573.3062223| 583.6721972958806|
+|[32.44952156,13.4...|        503.9783791| 502.0416951888494|
+|[32.46121245,13.2...|        543.3401663| 553.2633195045055|
+|[32.49541877,12.9...|        368.6547849| 377.8800712788411|
+|[32.53082944,12.3...|        420.9161595|422.68065331367757|
+|[32.55949313,11.7...|        468.6684656| 456.5471660119688|
+|[32.58249357,11.7...|        376.4968407|392.52057256195826|
 +--------------------+-------------------+------------------+
 only showing top 40 rows
 
@@ -16305,8 +16311,8 @@ only showing top 40 rows
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Root Mean Squared Error on training data: 9.834379
-R Squared (R2) on training data: 0.985431
+<pre>Root Mean Squared Error on training data: 9.750906
+R Squared (R2) on training data: 0.986095
 </pre>
 </div>
 </div>
@@ -16360,9 +16366,9 @@ R Squared (R2) on training data: 0.985431
 <pre>+-------+-------------------+
 |summary|Yearly Amount Spent|
 +-------+-------------------+
-|  count|                390|
-|   mean| 502.43813335974363|
-| stddev|  81.58199504598568|
+|  count|                377|
+|   mean| 500.22762147745334|
+| stddev|   82.7999884747694|
 |    min|        256.6705823|
 |    max|        765.5184619|
 +-------+-------------------+
@@ -16387,7 +16393,8 @@ R Squared (R2) on training data: 0.985431
 <span class="n">lr_predictions</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span><span class="s2">&quot;Yearly Amount Spent&quot;</span><span class="p">,</span><span class="s2">&quot;Independent features&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pyspark.ml.evaluation</span> <span class="kn">import</span> <span class="n">RegressionEvaluator</span>
 <span class="n">lr_evaluator</span> <span class="o">=</span> <span class="n">RegressionEvaluator</span><span class="p">(</span><span class="n">predictionCol</span><span class="o">=</span><span class="s2">&quot;prediction&quot;</span><span class="p">,</span> <span class="n">labelCol</span><span class="o">=</span><span class="s2">&quot;Yearly Amount Spent&quot;</span><span class="p">,</span><span class="n">metricName</span><span class="o">=</span><span class="s2">&quot;r2&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R Squared (R2) on test data = </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">lr_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">lr_predictions</span><span class="p">))</span>
+<span class="n">r2_test</span> <span class="o">=</span> <span class="n">lr_evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">lr_predictions</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;R Squared (R2) on test data = </span><span class="si">%g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">r2_test</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -16409,18 +16416,18 @@ R Squared (R2) on training data: 0.985431
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>+------------------+-------------------+--------------------+
-|        prediction|Yearly Amount Spent|Independent features|
-+------------------+-------------------+--------------------+
-|287.79331147202674|        282.4712457|[30.4925367,11.56...|
-| 451.7540769098059|        461.7807422|[30.73772037,12.6...|
-|387.18139055150914|        392.4973992|[31.04722214,11.1...|
-|462.02150554994796|        448.9332932|[31.06621816,11.7...|
-|509.18711779560954|        486.9470538|[31.12397435,12.3...|
-+------------------+-------------------+--------------------+
+<pre>+-----------------+-------------------+--------------------+
+|       prediction|Yearly Amount Spent|Independent features|
++-----------------+-------------------+--------------------+
+|472.2180354539273|        467.5019004|[30.83643267,13.1...|
+|388.2973841854264|        392.4973992|[31.04722214,11.1...|
+| 508.826799247724|        486.9470538|[31.12397435,12.3...|
+|564.5117028397945|        557.2526867|[31.12809005,13.2...|
+|534.7921525532133|        530.7667187|[31.42522688,13.2...|
++-----------------+-------------------+--------------------+
 only showing top 5 rows
 
-R Squared (R2) on test data = 0.978125
+R Squared (R2) on test data = 0.975913
 </pre>
 </div>
 </div>
@@ -16436,7 +16443,7 @@ R Squared (R2) on test data = 0.978125
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>R squared at <strong>0.978125</strong> indicates that in our model, approximate <strong>97%</strong> of the variability in “Yearly Amount Spent” can be explained using the regressor.</p>
+<p>R squared at <strong>0.975913</strong> indicates that in our model, approximate <strong>97%</strong> of the variability in “Yearly Amount Spent” can be explained using the regressor.</p>
 
 </div>
 </div>
